@@ -1,0 +1,13 @@
+Explanation of the store.ts file:
+valtio uses the concept of a proxy to manage the application state
+
+-proxy: This function creates a reactive state. For this case, todoStore is a proxy object that holds 
+    the state of the to-do list.
+
+-todos: An array of Todo objects, where each Todo has an id, text, and completed status.
+
+-addTodo: A function to add a new to-do item to the list.
+
+-toggleTodo: A function to toggle the completed status of a to-do item.
+
+-removeTodo: A function to remove a to-do item by its id.
