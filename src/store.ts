@@ -14,6 +14,7 @@ interface TodoStore {
   addTodo: (text: string) => void;
   toggleTodo: (id: number) => void;
   removeTodo: (id: number) => void;
+  editTodo: (id: number, newText: string) => void;
 }
 
 const todoStore = proxy<TodoStore>({
@@ -31,6 +32,13 @@ const todoStore = proxy<TodoStore>({
     const todo = todoStore.todos.find(todo => todo.id === id);
     if (todo) {
       todo.completed = !todo.completed;
+    }
+  },
+
+  editTodo: (id: number, newText: string) => {
+    const todo = todoStore.todos.find(todo => todo.id === id);
+    if (todo) {
+      todo.text = newText;
     }
   },
   
